@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        font: Arial 14px;
+      }
+    </style>
+    <script>
+      let pointAmount = 0
+      function updatePoints() {
+        document.getElementById("points").textContent(pointAmount)
+      }
+      setInterval(updatePoints, 10)
+    </script>
+  </head>
+  <body>
+    <h1 id="points"></h1>
+    <button onclick="pointAmount+=1">Its's a button!</button>
+  </body>
+</html>
