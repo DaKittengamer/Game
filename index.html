@@ -25,7 +25,9 @@
       function eventChecker() {
         if (pointHighScore = 66) {
           pointsPerClick = 0.1;
+          document.getElementById("announcements").removeAttribute("hidden");
           document.getElementById("announcements").innerHTML = "Sorry, but we can't let you make that number in this game.";
+          document.getElementById("objective").removeAttribute("hidden");
           document.getElementById("objective").innerHTML = "Objective: Find a way to bypass the restriction and type [REDACTED]";
         }; 
         if (pointHighScore = 66.9) {
@@ -37,9 +39,9 @@
     </script>
   </head>
   <body>
-    <p id="announcements"></p>
+    <p id="announcements" hidden></p>
     <h1 id="points"></h1>
-    <p id="objective"></p>
+    <p id="objective" hidden></p>
     <button onclick="pointAmount+=pointsPerClick">Its's a button!</button>
   </body>
 </html>
