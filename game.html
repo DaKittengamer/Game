@@ -13,15 +13,33 @@
       }
     </style>
     <script>
-      let pointAmount = 0
+      let pointAmount = 0;
+      let pointHighScore = 0;
+      let pointsPerClick = 1;
       function updatePoints() {
-        document.getElementById("points").textContent(pointAmount)
-      }
-      setInterval(updatePoints, 10)
+        document.getElementById("points").innerHTML = pointAmount;
+        if (pointAmount > pointHighScore) {
+          pointHighScore = pointAmount;
+        };
+      };
+      function eventChecker() {
+        if (pointHighScore = 66) {
+          pointsPerClick = 0.1;
+          document.getElementById("announcements").innerHTML = "Sorry, but we can't let you make that number in this game. Reason: This is a very serious game and therefore the use of 6X has been restricted";
+          document.getElementById("objective").innerHTML = "Objective: Find a way to bypass the restriction and type [REDACTED]";
+        }; 
+        if (pointHighScore = 66.9) {
+          pointsPerClick = 0.01
+        };
+      };
+      setInterval(updatePoints, 10);
+      setInterval(eventChecker, 10);
     </script>
   </head>
   <body>
+    <p id="announcements"></p>
     <h1 id="points"></h1>
-    <button onclick="pointAmount+=1">Its's a button!</button>
+    <p id="objective"></p>
+    <button onclick="pointAmount+=pointsPerClick">Its's a button!</button>
   </body>
 </html>
